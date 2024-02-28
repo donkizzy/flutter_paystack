@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_paystack/src/app_colors.dart';
 import 'package:flutter_paystack/src/common/utils.dart';
 import 'package:flutter_paystack/src/widgets/animated_widget.dart';
 import 'package:flutter_paystack/src/widgets/common/extensions.dart';
@@ -68,7 +69,6 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
 
   @override
   Widget build(BuildContext context) {
-    final sceondaryColor = context.colorScheme().secondary;
     return new Container(
       child: new CustomAnimatedWidget(
         controller: _mainController,
@@ -78,7 +78,7 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
             sizedBox,
             new Image.asset(
               'assets/images/successful.png',
-              color: sceondaryColor,
+              color: crustaOrange,
               width: 50.0,
               package: 'flutter_paystack',
             ),
@@ -86,7 +86,7 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
             Text(
               'Payment Successful',
               style: TextStyle(
-                color: context.textTheme().headline6?.color,
+                color: context.textTheme().bodyLarge?.color,
                 fontWeight: FontWeight.w500,
                 fontSize: 16.0,
               ),
@@ -98,7 +98,7 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
                 ? new Container()
                 : new Text('You paid ${Utils.formatAmount(widget.amount)}',
                     style: TextStyle(
-                      color: context.textTheme().headline6?.color,
+                      color: context.textTheme().bodyMedium?.color,
                       fontWeight: FontWeight.normal,
                       fontSize: 14.0,
                     )),
@@ -108,7 +108,7 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
               child: new Text(
                 _countdownAnim.value.toString(),
                 style: TextStyle(
-                    color: sceondaryColor,
+                    color: crustaOrange,
                     fontWeight: FontWeight.bold,
                     fontSize: 25.0),
               ),

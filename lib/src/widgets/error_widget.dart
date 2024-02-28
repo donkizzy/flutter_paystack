@@ -50,8 +50,9 @@ class ErrorWidget extends StatelessWidget {
             new Text(
               text!,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style:  TextStyle(
                 fontWeight: FontWeight.w500,
+                color: Theme.of(context).textTheme.bodyLarge?.color,
                 fontSize: 14.0,
               ),
             ),

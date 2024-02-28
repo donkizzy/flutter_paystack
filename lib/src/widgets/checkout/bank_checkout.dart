@@ -4,6 +4,7 @@ import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paystack/src/api/service/bank_service.dart';
 import 'package:flutter_paystack/src/api/service/contracts/banks_service_contract.dart';
+import 'package:flutter_paystack/src/app_colors.dart';
 import 'package:flutter_paystack/src/common/paystack.dart';
 import 'package:flutter_paystack/src/models/bank.dart';
 import 'package:flutter_paystack/src/models/charge.dart';
@@ -120,6 +121,7 @@ class _BankCheckoutState extends BaseCheckoutMethodState<BankCheckout> {
                 ? new Icon(
                     Icons.account_balance,
                     size: 35.0,
+              color: crustaOrange,
                   )
                 : container,
             _currentBank == null

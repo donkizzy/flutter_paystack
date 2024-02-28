@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_paystack/src/widgets/common/extensions.dart';
+import 'package:flutter_paystack/src/app_colors.dart';
 
 class WhiteButton extends _BaseButton {
   final bool flat;
@@ -47,7 +47,7 @@ class AccentButton extends StatelessWidget {
     return _BaseButton(
       onPressed: onPressed,
       showProgress: showProgress,
-      color: context.colorScheme().secondary,
+      color: crustaOrange,
       borderSide: BorderSide.none,
       textStyle: const TextStyle(
           fontSize: 14.0, color: Colors.white, fontWeight: FontWeight.bold),

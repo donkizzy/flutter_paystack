@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart' hide ErrorWidget;
 import 'package:flutter_paystack/src/api/service/contracts/banks_service_contract.dart';
 import 'package:flutter_paystack/src/api/service/contracts/cards_service_contract.dart';
+import 'package:flutter_paystack/src/app_colors.dart';
 import 'package:flutter_paystack/src/common/paystack.dart';
 import 'package:flutter_paystack/src/common/utils.dart';
 import 'package:flutter_paystack/src/models/card.dart';
@@ -104,7 +105,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
               child: Text(
                 "Secured by",
                 key: Key("SecuredBy"),
-                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: 10,color: context.textTheme().bodyMedium?.color),
               ),
             )
           ],
@@ -121,7 +122,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
                   'assets/images/paystack_icon.png',
                   key: Key("PaystackBottomIcon"),
                   package: 'flutter_paystack',
-                  height: 16,
+                  height: 15,
                 ),
               ),
             Image.asset(
@@ -177,7 +178,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-                color: context.textTheme().bodySmall?.color, fontSize: 12.0),
+                color: context.textTheme().bodyLarge?.color, fontSize: 12.0),
           ),
         if (!widget.hideAmount && !_charge.amount.isNegative)
           Row(
@@ -188,7 +189,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
               Text(
                 'Pay',
                 style: TextStyle(
-                    fontSize: 14.0, color: context.textTheme().headline1?.color),
+                    fontSize: 14.0, color: context.textTheme().bodyLarge?.color),
               ),
               SizedBox(
                 width: 5.0,
@@ -197,7 +198,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
                   child: Text(Utils.formatAmount(_charge.amount),
                       style: TextStyle(
                           fontSize: 15.0,
-                          color: context.textTheme().headline6?.color,
+                          color: context.textTheme().bodyLarge?.color,
                           fontWeight: FontWeight.bold)))
             ],
           )
@@ -248,16 +249,18 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
         child: new TabBar(
           controller: _tabController,
           isScrollable: true,
-          unselectedLabelColor: context.colorScheme().onBackground,
-          labelColor: accentColor,
+          indicatorSize: TabBarIndicatorSize.tab,
+          tabAlignment: TabAlignment.center,
+          unselectedLabelColor: Theme.of(context).disabledColor,
+          labelColor: crustaOrange,
           labelStyle:
               new TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500),
           indicator: new ShapeDecoration(
             shape: RoundedRectangleBorder(
                   borderRadius: tabBorderRadius,
                   side: BorderSide(
-                    color: accentColor,
-                    width: 1.0,
+                    color: crustaOrange,
+                    width: 2.0,
                   ),
                 ) +
                 const RoundedRectangleBorder(
